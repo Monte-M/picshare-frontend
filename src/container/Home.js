@@ -2,14 +2,14 @@ import React, { useRef } from 'react';
 import { HiMenu } from 'react-icons/hi';
 import { AiFillCloseCircle } from 'react-icons/ai';
 
-import { Sidebar, UserProfile } from '../../components/';
-import { client } from '../../client';
-import logo from '../../assets/logo.png';
+import { Sidebar, UserProfile } from '../components';
+import { client } from '../client';
+import logo from '../assets/logo.png';
 import Pins from './Pins';
 import { useState } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 import { useEffect } from 'react';
-import { userQuery } from '../../utils/data';
+import { userQuery } from '../utils/data';
 
 const Home = () => {
   const [toggleSidebar, setToggleSidebar] = useState(false);
