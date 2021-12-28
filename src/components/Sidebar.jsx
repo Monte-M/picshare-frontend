@@ -23,7 +23,7 @@ const Sidebar = ({ closeToggle, user }) => {
           className='flex px-5 gap-2 my-6 pt-1 w-190 items-center'
           onClick={handleCloseSidebar}
         >
-          <img src={logo} alt='logo' className='w-full' />
+          <img src={logo} alt='logo' />
         </Link>
         <div className='flex flex-col gap-5'>
           <NavLink
@@ -50,6 +50,7 @@ const Sidebar = ({ closeToggle, user }) => {
             >
               <img
                 src={category.image}
+                alt='category'
                 className='w-8 h-8 rounded-full shadow-sm'
               />
               {category.name}
