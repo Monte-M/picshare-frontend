@@ -1,17 +1,19 @@
 import React, { useEffect } from 'react';
-import { Route, Routes, useNavigate } from 'react-router-dom';
-import Login from './components/Login';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+
+import { Login } from './components';
 import Home from './container/Home';
-import { fetchUser } from './utils/fetchUser';
 
 const App = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const user = fetchUser();
+    const User =
+      localStorage.getItem('user') !== 'undefined'
+        ? JSON.parse(localStorage.getItem('user'))
+        : localStorage.clear();
 
-    if (!user) navigate('/login');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    if (!User) navigate('/login');
   }, []);
 
   return (
